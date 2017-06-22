@@ -1,0 +1,59 @@
+<h2>Employees</h2>
+	<h3 class="mt">{{action}} Employee</h3>
+
+	{{msg}}
+
+	<form action="?" method="POST" id="userform">
+		<input type="hidden" name="_csrf" value="{{csrfToken}}">
+		<div class="row">
+
+			<div class="col six first">
+				<div class="row">
+					<label class="mt hmb">First Name:</label>
+					<div class="col thirteen first">
+						<input type="text" name="first" class="hpl" value="{{first}}" required>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<label class="mt hmb">Last Name:</label>
+					<div class="col thirteen first">
+						<input type="text" name="last" class="hpl" value="{{last}}" required>
+					</div>
+				</div>
+
+				<div class="row">
+					<label class="mt hmb">Email:</label>
+					<div class="col thirteen first">
+						<input type="text" name="email" class="hpl" value="{{email}}" required>
+					</div>
+				</div>
+
+				<div class="row">
+					<label class="mt hmb">Status:</label>
+					<div class="col thirteen first">
+						<select name="status" class="hpl">
+							<option value="active"{{statusactive}}>Active</option>
+							<option value="inactive"{{statusinactive}}>Inactive</option>
+							<option value="test"{{statustest}}>TEST USER</option>
+						</select>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<button type="submit" class="dmt">Save</button>
+		<a href="/employees" class="button">Cancel</a>
+	</form>
+
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.min.js"></script>
+
+<script>
+$("#userform").validate();
+</script>
+
+
+

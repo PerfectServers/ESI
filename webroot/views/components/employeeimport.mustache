@@ -1,0 +1,38 @@
+<h2>Import Employees</h2>
+
+	{{msg}}
+
+<div class="dialog dmt pt pl">
+<b>NOTE format is:</b>
+<pre><code>firstname,lastname,email
+firstname,lastname,email</code></pre>
+</div>
+
+	<form action="?" method="POST" id="userform" enctype="multipart/form-data">
+		<input type="hidden" name="_csrf" value="{{csrfToken}}">
+		<div class="row">
+
+			<div class="col twelve first">
+				<div class="row">
+					<label class="mt hmb">CSV File:</label>
+					<div class="col thirteen first">
+						<input type="file" name="csv" class="hpl" required>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<button type="submit" class="dmt">Import</button>
+			<a href="/employees" class="button">Cancel</a>
+		</div>
+	</form>
+
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.min.js"></script>
+
+<script>
+$("#userform").validate();
+</script>
+
+
+

@@ -1,0 +1,58 @@
+{{>header}}
+	<div class="row" style="margin-top: 100px;">
+		<div class="col four first leftcol f l">{{>components/left}}</div>
+		<div class="col push_four twelve last rightcol">
+
+
+			{{#authenticated}}
+			<h2>Sending</h2>
+{{{msg}}}
+
+			<div class="row">
+				<div class="dialog col six first pt pl pr pb">
+					<form action="?" method="POST" id="testform">
+						<input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+						<label class="mt hmb">Send test to:</label>
+						<select name="sendTest">
+							{{#testUsers}}
+							<option value="{{id}}">{{email}}</option>
+							{{/testUsers}}
+						</select>
+						<button type="submit" class="dmt">Send Test</button>
+					</form>
+				</div>
+</div>
+
+<div class="row">
+				<div class="dialog col six first pt pl pr pb">
+					<form action="?" method="POST" id="allform">
+						<input type="hidden" name="_csrf" value="{{csrfToken}}">
+						<input type="hidden" name="_sendtoAll" value="true">
+
+						<label class="mt hmb">Manual send to {{employeeActiveQty}} active employees.</label>
+
+						<button type="submit" class="dmt">Send Now</button>
+					</form>
+				</div>
+				<div class="dialog col six last pt pl pr pb">
+					<form action="?" method="POST" id="reminderform">
+						<input type="hidden" name="_csrf" value="{{csrfToken}}">
+						<input type="hidden" name="_sendReminders" value="true">
+
+						<label class="mt hmb">Send reminders (if any).</label>
+
+						<button type="submit" class="dmt">Send Reminders Now</button>
+					</form>
+				</div>
+</div>
+<div class="row dpt">
+	<p>Note that sends other than "test" sends will only happen maximum once a month. If a send has already occured the user will not recieve another survey request.</p>
+	<p>Reminders will only go out to employees that have not completed their survey this current month.</p>
+</div>
+
+			{{/authenticated}}
+
+		</div>
+	</div>
+{{>footer}}

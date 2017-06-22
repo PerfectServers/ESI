@@ -1,0 +1,38 @@
+<h2>Employee List</h2>
+
+{{msg}}
+
+<table class="amp">
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Status</th>
+			<th>Surveys</th>
+			<th>&nbsp;</th>
+		</tr>
+	<thead>
+
+	<tbody>
+	{{#users}}
+		<tr>
+			<td>{{first}}</td>
+			<td>{{last}}</td>
+			<td>{{email}}</td>
+			<td>{{status}}</td>
+			<td>{{complete}}/{{of}}</td>
+			<td class="largericons">
+				<a href="/employees/{{id}}/responses" class="dmr"><span class="icon-eye"></span></a>
+				<a href="/employees/{{id}}/edit"><span class="icon-pencil"></span></a>
+				<a href="/employees/{{id}}/delete" class="deleteaction" dest="/employees"><span class="icon-trash"></span></a>
+			</td>
+		</tr>
+	{{/users}}
+	<tbody>
+
+</table>
+
+<a href="/employees/create" class="button">Create Employee</a>
+<a href="/employees/import" class="button">Import CSV</a>
+

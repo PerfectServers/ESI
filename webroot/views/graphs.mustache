@@ -1,0 +1,67 @@
+{{>header}}
+<script src="//www.amcharts.com/lib/3/amcharts.js" type="text/javascript"></script>
+<script src="//www.amcharts.com/lib/3/serial.js" type="text/javascript"></script>
+<script src="/assets/js/moment.min.js" type="text/javascript"></script>
+
+	<div class="row" style="margin-top: 100px;">
+		<div class="col four first leftcol f l">{{>components/left}}</div>
+		<div class="col push_four twelve last rightcol">
+
+
+			{{#authenticated}}
+			<h2>Overview</h2>
+
+<script src="/assets/js/graphing.js" type="text/javascript"></script>
+
+
+
+<style>
+
+.axis path,
+.axis line {
+fill: none;
+stroke: #000;
+shape-rendering: crispEdges;
+}
+
+.x.axis path {
+display: none;
+}
+
+.line {
+fill: none;
+stroke: steelblue;
+stroke-width: 1.5px;
+}
+.content {
+padding: 20px;
+}
+.header {
+width: 100%;
+background-color: #EEE;
+}
+
+</style>
+
+
+
+<div id="chartgroup"></div>
+
+
+
+
+<div style="display: none" class="chartops row">
+<div class="col one first">
+<label><input type="radio" name="group" id="rb1" onclick="setPanSelect()"> Select<label>
+</div>
+<div class="col one">
+<label style="margin-left: 20px"><input type="radio" checked="true" name="group" id="rb2" onclick="setPanSelect()"> Pan</label>
+</div>
+</div>
+			{{/authenticated}}
+<p class="dpb"></p>
+<p class="dpb"></p>
+
+		</div>
+	</div>
+{{>footer}}

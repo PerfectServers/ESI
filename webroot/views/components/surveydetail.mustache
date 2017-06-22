@@ -1,0 +1,31 @@
+<h2>Employee Survey Responses</h2>
+
+<table class="amp">
+	<thead>
+		<tr>
+			<th>Date</th>
+{{#questions}}
+<th>{{name}}</th>
+{{/questions}}
+<th>Average</th>
+<th>Note</th>
+		</tr>
+	<thead>
+
+	<tbody>
+	{{#responses}}
+		<tr class="sml{{#completed}} lgreen{{/completed}}">
+			<td style="white-space: nowrap;">{{year}} - {{month}}</td>
+			{{#answers}}
+			<td>{{response}}</td>
+			{{/answers}}
+			<td>{{average}}</td>
+			<td>{{#note}}<span class="icon-text" title="{{note}}"></span>{{/note}}</td>
+		</tr>
+	{{/responses}}
+	<tbody>
+
+</table>
+
+<a href="/employees" class="button">Back to employee list</a>
+

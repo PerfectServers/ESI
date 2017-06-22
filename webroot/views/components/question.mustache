@@ -1,0 +1,29 @@
+<h2>Question List</h2>
+
+{{msg}}
+
+<table class="amp">
+	<thead>
+		<tr>
+			<th>Question</th>
+			<th>Status</th>
+			<th>&nbsp;</th>
+		</tr>
+	<thead>
+
+	<tbody>
+	{{#questions}}
+		<tr>
+			<td>{{name}}</td>
+			<td>{{status}}</td>
+			<td class="largericons">
+				<a href="/questions/{{id}}/edit"><span class="icon-pencil"></span></a>
+			</td>
+		</tr>
+	{{/questions}}
+	<tbody>
+
+</table>
+
+<a href="/questions/create" class="button">Create Question</a>
+

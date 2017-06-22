@@ -1,0 +1,13 @@
+{{>header}}
+	<div class="row" style="margin-top: 100px;">
+		<div class="col four first leftcol f l">{{>components/left}}</div>
+		<div class="col push_four twelve last rightcol">
+
+			{{#authenticated}}
+			{{#list?}}{{>components/question}}{{/list?}}
+			{{#mod?}}{{>components/questionmod}}{{/mod?}}
+			{{/authenticated}}
+
+		</div>
+	</div>
+{{>footer}}
